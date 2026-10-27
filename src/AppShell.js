@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, Box, Button, Stack, Typography } from '@mui/material';
 import clearDeckMark from './assets/cleardeck-mark.svg';
+import { useThemeMode } from './ThemeContext';
 
 function initials(user) {
     return (user?.name || user?.email || 'U')
@@ -12,6 +13,7 @@ function initials(user) {
 }
 
 function AppShell({ user, boards = [], active, onNavigate, onLogout, children }) {
+    const { mode, toggleMode } = useThemeMode();
     return (
         <Box className="app-shell">
             <Box component="aside" className="app-sidebar">
@@ -32,6 +34,10 @@ function AppShell({ user, boards = [], active, onNavigate, onLogout, children })
                         <span aria-hidden="true">◇</span> Shared with me
                     </Button>
                 </Box>
+                <Button className="theme-toggle" onClick={toggleMode} aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}>
+                    <span aria-hidden="true">{mode === 'light' ? '☾' : '☀'}</span>
+                    <span className="theme-toggle-label">{mode === 'light' ? 'Dark mode' : 'Light mode'}</span>
+                </Button>
                 <Typography className="sidebar-section-label">Recent boards</Typography>
                 <Stack className="recent-boards" spacing={0.25}>
                     {boards.slice(0, 4).map((board, index) => (

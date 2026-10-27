@@ -244,7 +244,7 @@ function BoardList({ user, onLogout }) {
                     </Paper>
                 ) : ownedBoards.length === 0 ? (
                     <Paper sx={{ padding: "40px", textAlign: "center" }}>
-                        <Typography sx={{ color: "#888" }}>
+                        <Typography color="text.secondary">
                             No boards created yet.
                         </Typography>
                     </Paper>
@@ -271,7 +271,7 @@ function BoardList({ user, onLogout }) {
                                         <Typography color="text.secondary">{board.task_count || 0} tasks · {board.owner_id === user?.id ? "Owner" : "Member"}</Typography>
                                         {board.description && (
                                             <Typography
-                                                sx={{ color: "#777", marginTop: "4px" }}
+                                                sx={{ color: "text.secondary", marginTop: "4px" }}
                                             >
                                                 {board.description}
                                             </Typography>

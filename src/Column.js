@@ -96,7 +96,7 @@ function Column({ column, tasks, allTasks, columns, members, user, boardId, owne
             </Stack>}
         </Box>
         <Box className="column-task-list">
-            {columnTasks.map((task, i) => <Box key={task.id} {...dropProps(i)} className="task-drop-target" sx={{ borderTop: over === i ? '4px solid #52745f' : '4px solid transparent' }}>
+            {columnTasks.map((task, i) => <Box key={task.id} {...dropProps(i)} className="task-drop-target" sx={{ borderTop: 4, borderTopColor: over === i ? 'primary.main' : 'transparent' }}>
                 <Task task={task} columns={columns} members={members} boardId={boardId} user={user} owner={owner} lastColumnId={lastColumnId}
                     onEdit={values => onEditTask(task.id, values)} onDelete={() => onDeleteTask(task.id)}
                     onMove={task.column_id === lastColumnId ? undefined : async columnId => { try { await onMove(task.id, columnId, allTasks.filter(t => t.column_id === columnId && t.id !== task.id).length); } catch {} }}

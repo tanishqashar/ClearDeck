@@ -90,7 +90,7 @@ export function TaskEditor({ task, columns, members, onSave, onClose, boardId, u
                     {commentsLoading && <Typography role="status" color="text.secondary">Loading comments...</Typography>}
                     {commentsError && <Alert severity="error">{commentsError}</Alert>}
                     {!commentsLoading && !commentsError && !comments.length && <Typography color="text.secondary">No comments yet.</Typography>}
-                    {!commentsLoading && comments.map(c => <Box key={c.id} sx={{ borderBottom: '1px solid #ddd', py: 1 }}>
+                    {!commentsLoading && comments.map(c => <Box key={c.id} sx={{ borderBottom: 1, borderColor: 'divider', py: 1 }}>
                         <Typography variant="caption">{c.user_name} · {new Date(c.created_at.replace(' ', 'T') + 'Z').toLocaleString()}</Typography>
                         <Typography sx={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{c.content}</Typography>
                         {(c.user_id === user?.id || owner) && <Button type="button" disabled={busy} color="error" onClick={() => comment('DELETE', c.id)}>Delete comment</Button>}
@@ -125,12 +125,12 @@ function TaskComments({ boardId, taskId, user, owner }) {
             await load();
         } catch (err) { setError(err.message); }
     };
-    return <Box sx={{ mt: 1, p: 1, bgcolor: '#f8fafc', borderRadius: 1 }}>
+    return <Box sx={{ mt: 1, p: 1, bgcolor: 'background.default', borderRadius: 1 }}>
         <Typography variant="subtitle2">Comments</Typography>
         {loading && <Typography role="status" color="text.secondary">Loading comments...</Typography>}
         {error && <Alert severity="error">{error}</Alert>}
         {!loading && !error && !comments.length && <Typography color="text.secondary">No comments yet.</Typography>}
-        {!loading && comments.map(c => <Box key={c.id} sx={{ borderBottom: '1px solid #ddd', py: 0.75 }}>
+        {!loading && comments.map(c => <Box key={c.id} sx={{ borderBottom: 1, borderColor: 'divider', py: 0.75 }}>
             <Typography variant="caption">{c.user_name} · {new Date(c.created_at.replace(' ', 'T') + 'Z').toLocaleString()}</Typography>
             <Typography sx={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{c.content}</Typography>
             {(c.user_id === user?.id || owner) && <Button type="button" size="small" color="error" onClick={() => comment('DELETE', c.id)}>Delete comment</Button>}

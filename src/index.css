@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f6f6f1;
+  color: #252b28;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 code {
@@ -14,4 +17,5 @@ code {
 
 * { box-sizing: border-box; }
 button, input, select, textarea { font: inherit; }
-:focus-visible { outline: 3px solid #1565c0; outline-offset: 2px; }
+:root[data-theme="dark"] body { background: #141a16; color: #e8f0e9; }
+:focus-visible { outline: 3px solid #8fbd9d; outline-offset: 2px; }

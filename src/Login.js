@@ -48,7 +48,7 @@ function Login({ onLogin, onRegister }) {
         <Box className="auth-page"
             sx={{
                 minHeight: "100vh",
-                backgroundColor: "#f5f7fa",
+                backgroundColor: "background.default",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -84,7 +84,7 @@ function Login({ onLogin, onRegister }) {
                 <Typography
                     sx={{
                         textAlign: "center",
-                        color: "#666",
+                        color: "text.secondary",
                         marginBottom: "25px"
                     }}
                 >

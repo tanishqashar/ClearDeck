@@ -6,7 +6,6 @@ ClearDeck helps users organize work into boards, columns, and tasks, with suppor
 Project note: This README is stored in docs/README.md. Commands below should be run from the project root, not from the docs directory.
 
 !! IF THE FOLLOWING IMAGES CANNOT BE PREVIEWED- YOU CAN ACCESS THEM IN doc -> screenshots !!
-
 | Screen | Preview |
 |---|---|
 | Login | [TaskBoard Login Page](screenshots/LoginPage.png) |
@@ -16,26 +15,32 @@ Project note: This README is stored in docs/README.md. Commands below should be 
 | ClearDeck logo | [ClearDeck logo](screenshots/CLEARDECK_LOGO.png) |
 | Database ER diagram | [ClearDeck entity relationship diagram](screenshots/ER_DIAGRAM.png) |
   
-Features
-Authentication: User registration and login with password hashing and token-based authentication.
-Board management: Create, rename, and delete boards.
-Team collaboration: Support for board owners, members, and inviting existing registered users.
-Kanban workflow: Organize tasks into columns, including the default To Do, In Progress, and Done workflow.
-Column management: Add, rename, delete, and reorder columns, subject to the application's permissions and validation rules.
-Task management: Create, view, update, and delete tasks with titles, descriptions, priorities, due dates, assignees, and column placement.
-Task ordering: Move tasks within a column or between columns while preserving their order.
-Comments: Add comments to tasks, with server-side checks for comment ownership.
-Search and filters: Search task titles and descriptions, and filter by priority or assignee where supported by the interface.
-Responsive interface: React-based user interface with Material UI styling.
-Automated checks: Frontend, API, and browser test files are included in the repository.
-Technology stack
-Area	Technologies
-Frontend	React, JavaScript, CSS, Material UI
-Backend	Node.js, Express
-Database	SQLite using better-sqlite3
-Authentication	bcrypt, JSON Web Tokens (JWT)
-Configuration	Environment variables with dotenv
-Testing	React/Jest tests, API tests, browser tests
+## Features
+
+- **Authentication:** User registration and login with password hashing and token-based authentication.
+- **Board management:** Create, rename, and delete boards.
+- **Team collaboration:** Support for board owners, members, and inviting existing registered users.
+- **Kanban workflow:** Organize tasks into columns, including the default To Do, In Progress, and Done workflow.
+- **Column management:** Add, rename, delete, and reorder columns, subject to the application's permissions and validation rules.
+- **Task management:** Create, view, update, and delete tasks with titles, descriptions, priorities, due dates, assignees, and column placement.
+- **Task ordering:** Move tasks within a column or between columns while preserving their order.
+- **Comments:** Add comments to tasks, with server-side checks for comment ownership.
+- **Search and filters:** Search task titles and descriptions, and filter by priority or assignee where supported by the interface.
+- **Dark Mode:** Switch between light and dark themes using the theme toggle, with consistent styling across the interface and saved theme preferences after refreshing the application.
+- **Responsive interface:** React-based user interface with Material UI styling for a consistent experience across screen sizes.
+- **Automated checks:** Frontend, API, and browser test files are included in the repository.
+
+## Technology stack
+
+| Area | Technologies |
+|---|---|
+| Frontend | React, JavaScript, CSS, Material UI |
+| Backend | Node.js, Express |
+| Database | SQLite using better-sqlite3 |
+| Authentication | bcrypt, JSON Web Tokens (JWT) |
+| Configuration | Environment variables with dotenv |
+| Testing | React/Jest tests, API tests, browser tests |
+
 Project structure
 TaskBoard/
 ├── docs/

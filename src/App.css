@@ -29,7 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  background: #f3f5ef;
+  background: var(--sidebar);
   border-right: 1px solid var(--border);
 }
 
@@ -54,6 +54,18 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.theme-toggle {
+  justify-content: flex-start !important;
+  gap: 11px;
+  min-height: 38px !important;
+  margin-top: 12px !important;
+  padding: 7px 11px !important;
+  color: var(--muted) !important;
+  font-size: .82rem !important;
+}
+.theme-toggle > span:first-child { width: 17px; color: var(--sage); font-size: 1.15rem; text-align: center; }
+.theme-toggle:hover { background: var(--hover) !important; color: var(--ink) !important; }
 
 .sidebar-link, .recent-board {
   justify-content: flex-start !important;
@@ -282,7 +294,8 @@ body {
   .brand-lockup > div:last-child, .sidebar-link:not(.active)::after, .sidebar-link { font-size: 0 !important; }
   .sidebar-link { justify-content: center !important; gap: 0; }
   .sidebar-link span { font-size: 1rem; }
-  .sidebar-section-label, .recent-boards, .sidebar-account > div { display: none; }
+  .sidebar-section-label, .recent-boards, .sidebar-account > div, .theme-toggle-label { display: none; }
+  .theme-toggle { justify-content: center !important; gap: 0; }
   .sidebar-account { justify-content: center; padding: 14px 0 0; }
   .page-container { padding: 28px 18px 42px; }
   .board-columns { grid-template-columns: 1fr; gap: 14px; }
@@ -293,6 +306,48 @@ body {
   .stat-item { border-bottom: 1px solid var(--border); }
   .progress-stat { grid-column: 1 / -1; }
 }
+
+:root[data-theme="dark"] {
+  --sage: #8fbd9d;
+  --sage-dark: #b6d6bd;
+  --sage-soft: #26392d;
+  --page: #141a16;
+  --surface: #1d2720;
+  --ink: #e8f0e9;
+  --muted: #aab9ad;
+  --border: #35453a;
+  --danger: #e38a8a;
+  --amber: #e0b866;
+  --sidebar: #19231c;
+  --hover: #26392d;
+}
+
+:root:not([data-theme="dark"]) {
+  --sidebar: #f3f5ef;
+  --hover: #e9efe9;
+}
+
+:root[data-theme="dark"] .filter-bar { background: rgba(29,39,32,.88) !important; }
+:root[data-theme="dark"] .filter-bar .MuiOutlinedInput-root { background: var(--surface); }
+:root[data-theme="dark"] .column-drop-zone { background: rgba(20,26,22,.34); }
+:root[data-theme="dark"] .new-task-button { background: rgba(29,39,32,.5) !important; }
+:root[data-theme="dark"] .task-card .MuiTextField-root { background: rgba(20,26,22,.28); }
+:root[data-theme="dark"] .kanban-column[data-column-color="todo"] { background: #4a4125 !important; border-color: #7a6a37 !important; }
+:root[data-theme="dark"] .kanban-column[data-column-color="progress"] { background: #263d4d !important; border-color: #45677e !important; }
+:root[data-theme="dark"] .kanban-column[data-column-color="done"] { background: #29432e !important; border-color: #47704e !important; }
+:root[data-theme="dark"] .kanban-column[data-column-color="custom-0"] { background: #493348 !important; border-color: #795b76 !important; }
+:root[data-theme="dark"] .kanban-column[data-column-color="custom-1"] { background: #4b3426 !important; border-color: #7b5940 !important; }
+:root[data-theme="dark"] .kanban-column[data-column-color="custom-2"] { background: #383151 !important; border-color: #625a87 !important; }
+:root[data-theme="dark"] .kanban-column[data-column-color="custom-3"] { background: #24453d !important; border-color: #47796a !important; }
+:root[data-theme="dark"] .task-card { border-color: rgba(232,240,233,.22); box-shadow: 2px 3px 0 rgba(0,0,0,.2); }
+:root[data-theme="dark"] .task-card[data-column-color="todo"] { background: #66572c; }
+:root[data-theme="dark"] .task-card[data-column-color="progress"] { background: #36546a; }
+:root[data-theme="dark"] .task-card[data-column-color="done"] { background: #3a6040; }
+:root[data-theme="dark"] .task-card[data-column-color="custom-0"] { background: #654a63; }
+:root[data-theme="dark"] .task-card[data-column-color="custom-1"] { background: #68462f; }
+:root[data-theme="dark"] .task-card[data-column-color="custom-2"] { background: #51467b; }
+:root[data-theme="dark"] .task-card[data-column-color="custom-3"] { background: #39705f; }
+:root[data-theme="dark"] .calendar-day.outside { color: #718078 !important; }
 
 @media (min-width: 761px) and (max-width: 1080px) {
   .board-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
