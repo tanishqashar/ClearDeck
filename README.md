@@ -5,7 +5,7 @@ ClearDeck helps users organize work into boards, columns, and tasks, with suppor
 
 Project note: This README is stored in docs/README.md. Commands below should be run from the project root, not from the docs directory.
 
-
+!! IF THE FOLLOWING IMAGES CANNOT BE PREVIEWED- YOU CAN ACCESS THEM IN doc -> screenshots !!
 | Screen | Preview |
 |---|---|
 | Login | [TaskBoard Login Page](screenshots/LoginPage.png) |
