@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend uses the dependencies installed from the project root.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm --prefix .. run test:api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
